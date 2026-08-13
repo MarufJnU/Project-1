@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10142e" />
+    <title>Gallery | Hello, World!</title>
+    <style>
+      :root { color-scheme: dark; --ink: #f8f8ff; --muted: #b8bddb; --card: rgba(22,27,61,.64); --line: rgba(255,255,255,.14); --violet: #9b8cff; --cyan: #62e5ff; }
+      * { box-sizing: border-box; }
+      body { min-height: 100vh; margin: 0; padding: 24px; font-family: Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color: var(--ink); background: radial-gradient(circle at 17% 18%,rgba(98,229,255,.25),transparent 24rem),radial-gradient(circle at 83% 82%,rgba(155,140,255,.28),transparent 25rem),#10142e; }
+      .orb { position: fixed; width: 300px; aspect-ratio: 1; border-radius: 50%; filter: blur(2px); opacity: .65; pointer-events: none; animation: drift 10s ease-in-out infinite alternate; } .orb.one { top: -115px; right: -80px; background: #7658ff; } .orb.two { bottom: -120px; left: -95px; background: #00c2df; animation-delay: -4s; }
+      main { position: relative; width: min(980px,100%); margin: 48px auto; padding: clamp(5.2rem,9vw,6.2rem) clamp(1.5rem,5vw,3.5rem) clamp(2rem,6vw,3.5rem); border: 1px solid var(--line); border-radius: 28px; background: var(--card); box-shadow: 0 24px 80px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.09); backdrop-filter: blur(18px); animation: rise 850ms cubic-bezier(.2,.8,.2,1) both; }
+      nav { position: absolute; top: 22px; right: clamp(1.4rem,4vw,2.4rem); display: flex; gap: 18px; } nav a { color: var(--muted); font-size: .9rem; font-weight: 650; text-decoration: none; transition: color 160ms ease; } nav a:hover,nav a:focus-visible,nav a[aria-current="page"] { color: var(--cyan); }
+      .eyebrow { color: var(--cyan); font-size: .82rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; } h1 { margin: 14px 0 9px; font-size: clamp(2.8rem,8vw,5.4rem); line-height: .98; letter-spacing: -.06em; background: linear-gradient(120deg,#fff 20%,var(--cyan) 55%,var(--violet)); -webkit-background-clip: text; background-clip: text; color: transparent; } p { margin: 0 0 30px; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
+      .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; } .tile { min-height: 180px; display: flex; align-items: end; padding: 18px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; color: var(--ink); font-weight: 750; letter-spacing: .02em; box-shadow: inset 0 -70px 80px rgba(6,8,31,.5); } .tile:nth-child(1) { background: linear-gradient(135deg,#00c2df,#445fe4); } .tile:nth-child(2) { background: linear-gradient(135deg,#9b8cff,#e756b2); } .tile:nth-child(3) { background: linear-gradient(135deg,#ffb05d,#f05276); } .tile:nth-child(4) { background: linear-gradient(135deg,#00a99d,#61dd83); } .tile:nth-child(5) { background: linear-gradient(135deg,#5875ff,#9b8cff); } .tile:nth-child(6) { background: linear-gradient(135deg,#ff7f82,#ffbf55); } @keyframes rise { from { opacity: 0; transform: translateY(20px) scale(.98); } to { opacity: 1; transform: none; } } @keyframes drift { to { transform: translate(35px,28px) scale(1.12); } } @media (max-width: 620px) { body { padding: 14px; } main { margin: 0 auto; } nav { gap: 11px; } nav a { font-size: .78rem; } .grid { grid-template-columns: repeat(2,1fr); gap: 11px; } .tile { min-height: 135px; padding: 13px; } } @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: .01ms !important; } }
+    </style>
+  </head>
+  <body>
+    <div class="orb one"></div><div class="orb two"></div>
+    <main>
+      <nav aria-label="Primary navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html" aria-current="page">Gallery</a><a href="contact.html">Contact</a></nav>
+      <div class="eyebrow">A collection of ideas</div>
+      <h1>Gallery</h1>
+      <p>A few colorful places where the next great thing could begin.</p>
+      <section class="grid" aria-label="Gallery collection">
+        <div class="tile">Blue Horizon</div><div class="tile">Violet Bloom</div><div class="tile">Warm Spark</div><div class="tile">Fresh Start</div><div class="tile">Night Shift</div><div class="tile">Golden Hour</div>
+      </section>
+    </main>
+  </body>
+</html>
